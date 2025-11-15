@@ -1,0 +1,40 @@
+# Configuration file for Creative Work Report Generator
+
+# GitHub Configuration
+github:
+  # Token should be set via GITHUB_TOKEN environment variable
+  base_url: "https://api.github.com"
+  per_page: 1000
+  max_retries: 3
+  # Filter repositories to search (optional - if empty, searches all)
+  # Organizations: list of organization names (e.g., ["myorg", "anotherorg"])
+  # Repositories: list of repository names in format "org/repo" or just "repo" (e.g., ["myorg/repo", "repo"])
+  # If both are specified, repositories take precedence
+  organizations: ["genesislcap", "genesiscommunitysuccess"]  # Empty list = search all organizations
+  repositories: []  # Empty list = search all repositories
+
+# Jira Configuration
+jira:
+  # URL, email, and token should be set via environment variables
+  # JIRA_URL, JIRA_EMAIL, JIRA_API_TOKEN
+  api_version: "3"
+  max_results: 1000
+  max_retries: 3
+
+# OpenAI Configuration
+openai:
+  # API key should be set via OPENAI_API_KEY environment variable
+  model: "gpt-5.1"
+  max_tokens: 500
+
+# Report Configuration
+report:
+  company_name: ""  # Can be set via COMPANY_NAME environment variable
+  template_path: "templates/PL_time_report.xlsx"
+  default_year: null  # null means current year
+
+# Logging Configuration
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+
